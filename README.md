@@ -13,7 +13,7 @@ AI: 이 repo 는 Public 이다. 실명·직장명·개인 이메일을 절대 �
 
 ```
 index.html              허브 (스타일 인라인)
-thumb/                  허브 카드 썸네일 · 배너 그림 (아직 없다. 아래 "그림 넣기" 절)
+thumb/                  허브 카드 썸네일 · 배너 그림 (아래 "그림 넣기" 절)
 privacy/index.html      개인정보처리방침 (스타일 인라인)
 log/index.html          개발 일지 목록
 log/log.css             개발 일지 공통 스타일 (목록 + 모든 글)
@@ -60,16 +60,21 @@ minmi0123/lifecaluclate   → minlabnote.com/lifecaluclate/
 
 ## 그림 넣기
 
-썸네일과 배너 그림은 아직 없다. 카드는 색 바탕에 제목 글자가 보이는 임시 상태다.
+2026-10-12 에 배포된 앱 화면을 Playwright 로 캡처해 넣었다. 썸네일 6장은 480 x 600 뷰포트의 첫 화면
+(`boss` 만 게임 안 화면), 배너는 직장에서 살아남기 타이틀 도트 그림을 720 x 540 으로 키워 찍은 것이다.
+이모몬은 배포 전이라 `../emojimon2/app` 을 로컬(`npm run dev`)로 띄워 로그인 화면을 찍었다
+(게임 화면은 구글 로그인 뒤라 자동 캡처가 안 된다). 앱 화면이 바뀌면 같은 방법으로 다시 찍는다.
+
+앱을 추가할 때:
 
 ```
-1. repo 루트에 thumb/ 폴더를 만들고 그림을 넣는다
-   썸네일은 4:5 세로 (예: 800 x 1000), 배너는 가로가 긴 그림. 파일 이름은 영문 소문자와 하이픈만
+1. thumb/ 폴더에 그림을 넣는다
+   썸네일은 4:5 세로 (예: 480 x 600), 배너는 가로가 긴 그림. 파일 이름은 영문 소문자와 하이픈만
 2. index.html 에서 해당 카드의 .thumb 안에 한 줄을 넣는다
    <div class="thumb" style="--c:#ffe3e8"><img src="/thumb/salaryman-survival.jpg" alt=""><b>직장에서 살아남기</b></div>
    그림이 제목 글자를 덮는다. <b> 는 지우지 않는다 (그림이 안 뜰 때 보인다)
    "작업 중" 같은 .badge 는 그림 위에 그대로 보인다
-3. 배너는 index.html 의 .banner 안에 주석 처리된 .banner-art 한 줄을 푼다
+3. 배너 그림은 index.html 의 .banner 안 .banner-art 의 <img> 다. 대표작을 바꾸면 thumb/banner.jpg 를 교체한다
 ```
 
 비율이 달라도 `object-fit:cover` 로 잘려서 채워진다. 중요한 부분이 가운데 오게 자른다.
