@@ -8,23 +8,14 @@
 <link rel="canonical" href="https://minlabnote.com/privacy/">
 <meta name="robots" content="index, follow">
 <style>
+  /* 색은 허브 index.html · log/log.css 와 같은 값이다. 바꿀 때 세 곳을 함께 고친다 */
   :root{
-    --bg:#fbfaf8; --surface:#fff; --line:#e7e2d9; --line-soft:#f0ece4;
-    --ink:#23201c; --ink-2:#55504a; --ink-3:#8b847b;
-    --accent:#c2410c; --accent-soft:#fff3ec;
+    color-scheme:light;
+    --bg:#ffffff; --surface:#ffffff; --soft:#f7f7f7;
+    --line:#dddddd; --line-soft:#ebebeb;
+    --ink:#222222; --ink-2:#3f3f3f; --ink-3:#6a6a6a;
+    --accent:#ff385c; --accent-deep:#e00b41; --accent-soft:#fff1f3;
     --radius:14px;
-  }
-  @media (prefers-color-scheme:dark){
-    :root:not([data-theme="light"]){
-      --bg:#171614; --surface:#211f1c; --line:#35322d; --line-soft:#2a2724;
-      --ink:#f2efe9; --ink-2:#c0bab1; --ink-3:#8d867d;
-      --accent:#fb923c; --accent-soft:#2b1d14;
-    }
-  }
-  :root[data-theme="dark"]{
-    --bg:#171614; --surface:#211f1c; --line:#35322d; --line-soft:#2a2724;
-    --ink:#f2efe9; --ink-2:#c0bab1; --ink-3:#8d867d;
-    --accent:#fb923c; --accent-soft:#2b1d14;
   }
   *{box-sizing:border-box}
   body{
@@ -33,13 +24,13 @@
     line-height:1.78; -webkit-text-size-adjust:100%;
   }
   .wrap{max-width:720px; margin:0 auto; padding:0 16px}
-  a{color:var(--accent)}
+  a{color:var(--accent-deep)}
 
   .back{
     display:inline-block; margin:34px 0 0; font-size:.9rem;
     color:var(--ink-3); text-decoration:none;
   }
-  .back:hover{color:var(--accent)}
+  .back:hover{color:var(--accent-deep)}
 
   header{padding:22px 0 38px; border-bottom:1px solid var(--line-soft)}
   h1{margin:0 0 14px; font-size:clamp(1.5rem,4.6vw,2rem); letter-spacing:-.02em}
@@ -73,7 +64,7 @@
   td:first-child{color:var(--ink); white-space:nowrap}
 
   .contact{
-    background:var(--accent-soft); border:1px solid var(--line);
+    background:var(--soft); border:1px solid var(--line-soft);
     border-radius:var(--radius); padding:20px 24px;
   }
   .contact p{color:var(--ink-2); margin-bottom:8px}

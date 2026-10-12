@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<!--
+  개발 일지 글 템플릿.
+  쓰는 법: 이 폴더(_template)를 통째로 복사해 /log/글-주소/ 로 이름을 바꾼다.
+          글-주소 는 영문 소문자와 하이픈만 쓴다 (예: salaryman-ending-design).
+          그다음 이 파일에서 [대괄호] 로 표시된 곳을 전부 채운다. 여섯 군데 + 본문이다.
+          마지막으로 /log/index.html 목록 맨 위에 <li> 한 덩어리를 추가한다.
+  이 주석은 복사한 글에서 지운다.
+-->
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>[글 제목] · 민랩노트</title>
+<meta name="description" content="[검색 결과에 보일 한두 문장 요약]">
+<link rel="canonical" href="https://minlabnote.com/log/[글-주소]/">
+<meta property="og:type" content="article">
+<meta property="og:title" content="[글 제목]">
+<meta property="og:description" content="[검색 결과에 보일 한두 문장 요약]">
+<meta property="og:url" content="https://minlabnote.com/log/[글-주소]/">
+<link rel="stylesheet" href="/log/log.css">
+</head>
+<body>
+<div class="wrap">
+
+  <a class="back" href="/log/">&larr; 개발 일지</a>
+
+  <header>
+    <span class="kicker">[프로젝트 이름]</span>
+    <h1>[글 제목]</h1>
+    <p class="dates">[2026년 10월 12일]</p>
+  </header>
+
+  <article>
+
+    <!-- ↓↓↓ 본문 시작. 여기부터 "본문 끝" 까지만 바꾼다. 분량 목표 1,500~3,000자 ↓↓↓ -->
+
+    <p>
+      첫 문단. 이 글이 무슨 이야기인지 두세 문장으로 적는다.
+    </p>
+
+    <h2>소제목</h2>
+
+    <p>
+      문단. <strong>강조할 말</strong>은 이렇게 감싼다.
+      코드 이름을 문장 안에 쓸 때는 <code>localStorage</code> 처럼 쓴다.
+    </p>
+
+    <ul>
+      <li>목록 항목</li>
+      <li>목록 항목</li>
+    </ul>
+
+    <blockquote>
+      <p>따로 떼어 보여줄 말, 또는 한 줄 결론.</p>
+    </blockquote>
+
+    <!-- 그림: 파일을 이 글 폴더에 같이 넣고 파일 이름만 적는다. alt 는 그림 설명 -->
+    <figure>
+      <img src="그림파일.png" alt="그림에 무엇이 보이는지">
+      <figcaption>그림 아래 설명</figcaption>
+    </figure>
+
+    <!-- 코드 블록: 꺾쇠는 &lt; &gt; 로 바꿔 적는다 -->
+<pre><code>const saved = localStorage.getItem('save');</code></pre>
+
+    <!-- 표: 폰에서 넘칠 수 있어 table-scroll 로 감싼다 -->
+    <div class="table-scroll">
+      <table>
+        <tr><th>항목</th><th>값</th></tr>
+        <tr><td>예시</td><td>1</td></tr>
+      </table>
+    </div>
+
+    <!-- ↑↑↑ 본문 끝 ↑↑↑ -->
+
+    <!-- 관련 앱이 없으면 이 상자를 통째로 지운다 -->
+    <div class="related">
+      <p>이 글에서 다룬 것</p>
+      <p><a href="/[앱-경로]/">[앱 이름] 바로 가기</a></p>
+    </div>
+
+  </article>
+
+  <footer>
+    <p><a href="/log/">개발 일지 목록</a> &middot; <a href="/">민랩노트</a></p>
+    <p><a href="/privacy/">개인정보처리방침</a></p>
+    <p>minlabnote.com</p>
+  </footer>
+
+</div>
+</body>
+</html>

@@ -1,0 +1,94 @@
+/* 개발 일지 공통 스타일 — /log/ 목록과 모든 글이 함께 쓴다.
+   색 변수는 허브 index.html · privacy/index.html 의 :root 와 같은 값이다. 바꿀 때 세 곳을 함께 고친다.
+   --accent 는 작은 글씨에 대비가 모자라다. 글씨 색에는 --accent-deep 을 쓴다. */
+:root{
+  color-scheme:light;
+  --bg:#ffffff; --surface:#ffffff; --soft:#f7f7f7;
+  --line:#dddddd; --line-soft:#ebebeb;
+  --ink:#222222; --ink-2:#3f3f3f; --ink-3:#6a6a6a;
+  --accent:#ff385c; --accent-deep:#e00b41; --accent-soft:#fff1f3;
+  --radius:14px;
+}
+*{box-sizing:border-box}
+body{
+  margin:0; background:var(--bg); color:var(--ink);
+  font-family:"Pretendard","Apple SD Gothic Neo","Malgun Gothic",system-ui,-apple-system,sans-serif;
+  line-height:1.78; -webkit-text-size-adjust:100%;
+}
+.wrap{max-width:720px; margin:0 auto; padding:0 16px}
+a{color:var(--accent-deep)}
+
+.back{
+  display:inline-block; margin:34px 0 0; font-size:.9rem;
+  color:var(--ink-3); text-decoration:none;
+}
+.back:hover,.back:focus-visible{color:var(--accent-deep)}
+
+header{padding:22px 0 38px; border-bottom:1px solid var(--line-soft)}
+.kicker{
+  display:block; font-size:.76rem; letter-spacing:.09em; text-transform:uppercase;
+  color:var(--accent-deep); margin-bottom:10px;
+}
+h1{margin:0 0 14px; font-size:clamp(1.5rem,4.6vw,2rem); line-height:1.36; letter-spacing:-.02em}
+.dates{margin:0; color:var(--ink-3); font-size:.87rem}
+.lede{margin:0; color:var(--ink-2); font-size:1rem; max-width:54ch}
+
+/* ── 목록 ── */
+.posts{list-style:none; margin:0; padding:30px 0 10px}
+.posts li{margin:0 0 14px}
+.post{
+  display:block; background:var(--surface); border:1px solid var(--line);
+  border-radius:var(--radius); padding:22px 24px;
+  text-decoration:none; color:inherit; transition:border-color .16s, transform .16s;
+}
+.post:hover,.post:focus-visible{border-color:var(--accent); transform:translateY(-2px)}
+.post:focus-visible{outline:2px solid var(--accent); outline-offset:3px}
+.post .when{display:block; font-size:.8rem; color:var(--ink-3); margin-bottom:6px}
+.post h2{margin:0 0 6px; font-size:1.12rem; line-height:1.45; letter-spacing:-.01em}
+.post p{margin:0; color:var(--ink-2); font-size:.95rem}
+.empty{padding:40px 0 20px; color:var(--ink-3); font-size:.95rem}
+
+/* ── 글 본문 ── */
+article{padding:34px 0 10px}
+article h2{margin:44px 0 14px; font-size:1.22rem; line-height:1.45; letter-spacing:-.01em}
+article h2:first-child{margin-top:0}
+article h3{margin:30px 0 10px; font-size:1.03rem}
+article p{margin:0 0 18px; color:var(--ink-2); font-size:1rem}
+article ul,article ol{margin:0 0 18px; padding-left:22px; color:var(--ink-2); font-size:1rem}
+article li{margin-bottom:7px}
+article strong{color:var(--ink); font-weight:600}
+article blockquote{
+  margin:0 0 18px; padding:14px 18px; border-left:3px solid var(--accent);
+  background:var(--accent-soft); border-radius:0 10px 10px 0; color:var(--ink-2);
+}
+article blockquote p:last-child{margin-bottom:0}
+article figure{margin:26px 0}
+article img{display:block; max-width:100%; height:auto; border:1px solid var(--line); border-radius:10px}
+article figcaption{margin-top:8px; font-size:.85rem; color:var(--ink-3); text-align:center}
+article code{
+  font-family:Consolas,"SFMono-Regular",Menlo,monospace; font-size:.9em;
+  background:var(--line-soft); padding:2px 6px; border-radius:5px;
+}
+article pre{
+  margin:0 0 18px; padding:16px 18px; overflow-x:auto;
+  background:var(--soft); border:1px solid var(--line-soft); border-radius:10px;
+  font-size:.88rem; line-height:1.6;
+}
+article pre code{background:none; padding:0; font-size:inherit}
+article table{width:100%; border-collapse:collapse; margin:0 0 18px; font-size:.93rem}
+article th,article td{text-align:left; padding:9px 10px; border-bottom:1px solid var(--line-soft); color:var(--ink-2)}
+article th{color:var(--ink-3); font-weight:600; font-size:.82rem; letter-spacing:.04em}
+.table-scroll{overflow-x:auto}
+
+/* 글 끝: 관련 앱으로 가는 상자 */
+.related{
+  margin:34px 0 0; padding:20px 24px;
+  background:var(--surface); border:1px solid var(--line); border-radius:var(--radius);
+}
+.related p{margin:0 0 6px; color:var(--ink-2); font-size:.95rem}
+.related p:last-child{margin-bottom:0}
+
+footer{padding:36px 0 60px; color:var(--ink-3); font-size:.87rem}
+footer p{margin:0 0 7px}
+footer a{color:var(--ink-3); text-decoration:underline; text-underline-offset:3px}
+footer a:hover,footer a:focus-visible{color:var(--accent-deep)}
