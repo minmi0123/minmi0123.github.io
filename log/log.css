@@ -13,7 +13,7 @@
 body{
   margin:0; background:var(--bg); color:var(--ink);
   font-family:"Pretendard","Apple SD Gothic Neo","Malgun Gothic",system-ui,-apple-system,sans-serif;
-  line-height:1.78; -webkit-text-size-adjust:100%;
+  line-height:1.78; -webkit-text-size-adjust:100%; word-break:keep-all;
 }
 .wrap{max-width:720px; margin:0 auto; padding:0 16px}
 a{color:var(--accent-deep)}
@@ -64,6 +64,15 @@ article blockquote{
 article blockquote p:last-child{margin-bottom:0}
 article figure{margin:26px 0}
 article img{display:block; max-width:100%; height:auto; border:1px solid var(--line); border-radius:10px}
+/* 게임 캡처: 세로 그림이라 폭을 줄여 가운데 둔다 */
+/* 링크로 감싸면 누르면 게임이 새 창으로 열린다 */
+article figure.shot img{max-width:300px; width:100%; margin:0 auto; transition:transform .16s, box-shadow .16s}
+article figure.shot a{display:block; border-radius:10px}
+article figure.shot a:hover img,article figure.shot a:focus-visible img{transform:translateY(-2px); box-shadow:rgba(0,0,0,.04) 0 2px 6px, rgba(0,0,0,.1) 0 4px 8px}
+article figure.shot a:focus-visible{outline:none}
+article figure.shot a:focus-visible img{outline:2px solid var(--accent); outline-offset:3px}
+/* 손그림: 테두리 없이 */
+article figure.drawing img{border:0; border-radius:0; margin:0 auto}
 article figcaption{margin-top:8px; font-size:.85rem; color:var(--ink-3); text-align:center}
 article code{
   font-family:Consolas,"SFMono-Regular",Menlo,monospace; font-size:.9em;

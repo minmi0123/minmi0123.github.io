@@ -102,7 +102,15 @@ minmi0123/lifecaluclate   → minlabnote.com/lifecaluclate/
 - `_template` 이 배포되지 않는 것은 GitHub Pages 의 Jekyll 이 `_` 로 시작하는 폴더를 빼기 때문이다.
   **repo 루트에 `.nojekyll` 을 만들면 템플릿이 그대로 공개된다.** 만들지 않는다
 - 스타일은 `log/log.css` 하나다. 글마다 `<style>` 을 넣지 않는다. 색은 아래 "색" 절을 따른다
-- 티스토리 글을 그대로 옮기지 않는다 (중복 콘텐츠). 여기는 과정 위주로 쓴다
+- 티스토리에 같은 글을 올려도 된다 (2026-10-31 구글 공식 문서 확인). 중복 콘텐츠는 스팸 정책 위반이 아니고
+  벌점도 없다. 애드센스 "복제 콘텐츠" 정책은 남의 사이트 글을 가져다 쓰는 경우다. 다만 비슷한 페이지 여럿 중
+  구글이 하나만 대표로 검색에 보여주므로, 티스토리 쪽이 뽑히면 이 글의 검색 유입이 줄 수 있다.
+  내 글을 내 사이트 두 곳에 올리는 경우는 공식 문서에 명시가 없다. 그래서 다음을 지킨다:
+  1. log 에 먼저 올리고 티스토리는 며칠 뒤에 올린다
+  2. log 가 완성판 (손그림 · 게임 링크 전부), 티스토리는 문단을 줄이거나 바꾼 판
+  3. 티스토리 글 끝에 minlabnote.com 원문 링크를 단다
+  근거: developers.google.com/search/docs/crawling-indexing/canonicalization ,
+  support.google.com/publisherpolicies/answer/11190248
 
 ## 올리지 않은 프로젝트
 
