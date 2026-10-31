@@ -43,7 +43,6 @@
   /* 첫 화면 */
   .intro{padding:36px 0 24px}
   h1{margin:0 0 10px; font-size:clamp(1.55rem,5vw,1.9rem); line-height:1.35; letter-spacing:-.02em}
-  .lede{margin:0; color:var(--ink-2); font-size:1rem; max-width:52ch}
 
   .banner{
     display:grid; grid-template-columns:1fr; align-items:center; overflow:hidden;
@@ -114,20 +113,6 @@
   .card.is-off{cursor:default}
   .card.is-off .thumb b,.card.is-off h3,.card.is-off .desc{opacity:.6}
 
-  /* 글 구역 */
-  .prose{padding:56px 0 0}
-  .prose > h2{margin:0 0 6px; font-size:1.4rem; letter-spacing:-.02em}
-  .section-note{margin:0 0 8px; color:var(--ink-3); font-size:.94rem}
-  .item{padding:22px 0; border-bottom:1px solid var(--line-soft)}
-  .item:last-child{border-bottom:0}
-  .item .kicker{display:block; font-size:.8rem; color:var(--ink-3); margin-bottom:4px}
-  .item h3{margin:0 0 6px; font-size:1.1rem; letter-spacing:-.01em}
-  .item p{margin:0 0 10px; color:var(--ink-2); font-size:.97rem; line-height:1.75}
-  .item .meta{margin:0; color:var(--ink-3); font-size:.84rem}
-  .item .meta a{color:var(--ink); font-weight:600; text-underline-offset:3px}
-  .about p{color:var(--ink-2); margin:14px 0 0; font-size:.97rem; line-height:1.75}
-  .about strong{color:var(--ink); font-weight:600}
-
   footer{margin-top:64px; background:var(--soft); color:var(--ink-3); font-size:.87rem}
   footer .wrap{padding-top:32px; padding-bottom:48px}
   footer p{margin:0 0 7px}
@@ -142,8 +127,9 @@
     <a class="logo" href="/">minlabnote</a>
     <nav aria-label="이 페이지 안에서 이동">
       <a href="#games-h">게임</a>
+      <a href="#study-h">학습</a>
       <a href="#webs-h">웹</a>
-      <a href="#about-h">소개</a>
+      <a href="/log/">일지</a>
     </nav>
   </div>
 </div>
@@ -152,10 +138,6 @@
 
   <header class="intro">
     <h1>직장인을 위한 작은 도구와 게임</h1>
-    <p class="lede">
-      출퇴근길에 잠깐 열어볼 만한 것들을 만들어 둡니다.
-      설치할 것도, 가입할 것도 없습니다. 주소만 열면 바로 시작합니다.
-    </p>
   </header>
 
   <a class="banner" href="/salaryman-survival/">
@@ -213,6 +195,24 @@
 
   <section class="row">
     <div class="row-head">
+      <h2 id="study-h">학습</h2>
+      <div class="nav">
+        <button type="button" data-dir="-1" data-for="study" aria-label="학습 이전"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M10 3 5 8l5 5"/></svg></button>
+        <button type="button" data-dir="1" data-for="study" aria-label="학습 다음"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m6 3 5 5-5 5"/></svg></button>
+      </div>
+    </div>
+    <div class="track" id="study" aria-labelledby="study-h">
+      <a class="card" href="/k8s-sim/">
+        <div class="thumb" style="--c:#fde8d8"><img src="/thumb/k8s-sim.jpg" alt=""><b>쿠버네티스 주식회사</b></div>
+        <h3>쿠버네티스 주식회사</h3>
+        <p class="desc">회사생활 시뮬레이션을 통해 배우는 쿠버네티스</p>
+        <p class="meta">학습 · 쿠버네티스</p>
+      </a>
+    </div>
+  </section>
+
+  <section class="row">
+    <div class="row-head">
       <h2 id="webs-h">웹</h2>
       <div class="nav">
         <button type="button" data-dir="-1" data-for="webs" aria-label="웹 이전"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M10 3 5 8l5 5"/></svg></button>
@@ -233,77 +233,6 @@
         <p class="meta">역대 당첨번호 · 매주 자동 갱신</p>
       </a>
     </div>
-  </section>
-
-  <section class="prose">
-    <h2>하나씩 소개</h2>
-    <p class="section-note">전부 무료이고, PC와 모바일 브라우저에서 바로 실행됩니다.</p>
-
-    <div class="item">
-      <span class="kicker">웹게임</span>
-      <h3>써니의 책</h3>
-      <p>군데군데 지워진 낡은 책 한 권. 시골에서 농사일을 돕던 소녀가 슬퍼하지 않도록, 소녀가 했던 선택을 골라 이야기를 완성해 주세요.</p>
-      <p class="meta">실화 바탕 스토리 · 저장 지원 · PC/모바일 · <a href="/momdad/">바로 가기</a></p>
-    </div>
-    <div class="item">
-      <span class="kicker">웹게임</span>
-      <h3>직장에서 살아남기</h3>
-      <p>신입사원 00씨. 지옥같은 회사를 다니며 버티는 시뮬레이션입니다. 환생을 반복하다보면 어느새 멋진 직장인이 될지도??</p>
-      <p class="meta">엔딩 21종 · 저장 지원 · PC/모바일 · <a href="/salaryman-survival/">바로 가기</a></p>
-    </div>
-    <div class="item">
-      <span class="kicker">웹게임</span>
-      <h3>회사에서 탈출하기</h3>
-      <p>수정 요청을 난사하는 고객사, 일안하는 사수 등등 여러 빌런들을 무찌르며 퇴근을 해야합니다. 과연 야근없이 퇴근할 수 있을까요??</p>
-      <p class="meta">턴제 로그라이크 · PC/모바일 · <a href="/exit-company/">바로 가기</a></p>
-    </div>
-    <div class="item">
-      <span class="kicker">웹게임 · 작업 중</span>
-      <h3>사장으로 살아남기 (가제)</h3>
-      <p>열심히 모은 돈 3천만 원으로 드디어 내 회사를 차린 00씨. 영업할까, 개발할까, 사람을 뽑을까? 내 선택대로 회사를 키우다 보면 나도 몰랐던 내 MBTI가 나옵니다.</p>
-      <p class="meta">회사 키우기 · MBTI 진단 · PC/모바일 · <a href="/boss/">바로 가기</a></p>
-    </div>
-    <div class="item">
-      <span class="kicker">웹게임 · 준비 중</span>
-      <h3>이모몬</h3>
-      <p>🐣 톡톡 누르기만 하면 쑥쑥 자라요. 삐약몬이 닭몬이 될 때까지 키우고, 다 키운 친구들은 도감에 모아 보세요. 회사에서 몰래 하기 딱 좋습니다.</p>
-      <p class="meta">키우기 · 도감 수집 · PC/모바일</p>
-    </div>
-    <div class="item">
-      <span class="kicker">통계 · 계산기</span>
-      <h3>내 월급, 어느 정도일까</h3>
-      <p>나이·성별·직종을 고르면 같은 조건의 사람들 사이에서 내 월급이 상위 몇 %인지 알려드려요. 통계청 자료를 바탕으로 했고, 입력한 월급은 어디에도 저장되지 않아요.</p>
-      <p class="meta">통계청 자료 · 입력값 저장 안 함 · PC/모바일 · <a href="/lifecaluclate/">바로 가기</a></p>
-    </div>
-    <div class="item">
-      <span class="kicker">데이터 · 놀이</span>
-      <h3>로또 랩</h3>
-      <p>지금까지 가장 많이 나온 번호는? 1등이 제일 많이 나온 동네는? 역대 당첨번호로 이것저것 구경해 보세요. 단, 당첨 확률을 올려 주는 비법은 없습니다. 로또는 정말 운이거든요.</p>
-      <p class="meta">역대 당첨번호 · 매주 자동 갱신 · PC/모바일 · <a href="/lotto-lab/">바로 가기</a></p>
-    </div>
-  </section>
-
-  <section class="prose about">
-    <h2 id="about-h">이곳에 대하여</h2>
-    <p>
-      직장을 다니면서 짬짬이 만든 것들을 모아둔 개인 사이트입니다.
-      거창한 계획이 있어서 시작한 건 아니고, 출퇴근길에 혼자 놀 방법을 찾다가
-      하나씩 만들게 됐습니다.
-    </p>
-    <p>
-      만들 때 지키려는 것이 두 가지 있습니다. 하나는 <strong>숫자를 부풀리지
-      않는 것</strong>입니다. 월급 통계에서 평균 대신 분위수를 쓰고, 로또에서
-      핫 넘버를 예측 도구가 아니라 착시로 다루는 건 같은 이유입니다. 근거 없이
-      그럴듯해 보이는 기능은 만들었다가도 지웁니다.
-    </p>
-    <p>
-      다른 하나는 <strong>가볍게 두는 것</strong>입니다. 로그인도, 설치도,
-      개인정보 수집도 없습니다. 월급이나 번호를 입력해도 그 값은 브라우저 안에
-      머물고 서버로 가지 않습니다.
-    </p>
-    <p>
-      새로 만드는 것이 생기면 여기에 추가됩니다.
-    </p>
   </section>
 
 </main>
