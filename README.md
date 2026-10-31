@@ -3,8 +3,8 @@
 `minlabnote.com` 의 허브 페이지. 토이 프로젝트들의 입구 역할을 한다.
 
 ```
-AI: 이 repo 는 Public 이다. 실명·직장명·개인 이메일을 절대 넣지 않는다.
-    상세 규칙은 ../dev-guide/README.md 와 trouble.md 를 본다.
+AI: 이 repo 는 Public 이다. 실명·직장명·개인 이메일 금지 규칙은 2026-10-31 해제됐다.
+    토큰·인증 파일 같은 보안 정보만 넣지 않는다. 상세는 ../dev-guide/trouble.md.
 ```
 
 ## 구조
